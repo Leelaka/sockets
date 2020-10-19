@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Playing with sockets</title>
-<link ref="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-<h1> Let's use sockets </h1>
-<br>
-<div>
-    <label>Text</label>
-    <input type="text" id="text"><br><br>
-    <button type="button" id="click"> Click </button>
-</div>
+    <head>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <title>Playing with sockets</title>
+        <style>
+        body{
+             background-color: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Let's use sockets </h1>
+        <br>
+        <div class="container">
+            <div class="row" id="chatArea">
+            
+            </div>
+            <div class"row">
+            <label>Text</label>
+            <input type="text" id="text">
+            </div>
+            <br><br>
+            <button type="button" id="sendMessageBtn"> Click </button>
+            <button type="button" id="rollBtn"> roll </button>
+        </div>
 
 <script src="script.js"> </script>
+<script src="/socket.io/socket.io.js"></script>
 </body>
 </html>
         
