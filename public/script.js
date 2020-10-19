@@ -10,12 +10,27 @@ const sendMessage=()=>{
     socket.emit('chat-message',payload);
 };
 
+const roll=()=>{
+    let payload={
+        "sender":'demo'
+    };
+    socket.emit('roll',payload);
+};
+
 $(document).ready(function(){
     console.log("Document is ready");
     socket = io();
 
     socket.on('chat-message', msg=>{
         $('#chatArea').append($('<li>').text(msg));
+    });
+
+    socket.on('roll', msg=>{
+        $('#chatArea').append($('<li>').text(msg));
+    });
+
+    socket.on('time', msg=>{
+        $('#time').html(msg);
     });
     // //bind the button
     // $("#sendMessageBtn").click(testButtonFunction);
@@ -26,5 +41,6 @@ $(document).ready(function(){
     // });
 
     $('#sendMessageBtn').click(sendMessage);
+    $('#rollBtn').click(roll);
 });
 
